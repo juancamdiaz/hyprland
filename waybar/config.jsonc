@@ -1,14 +1,14 @@
 {
-
-"reload_style_on_change": true,
+    "reload_style_on_change": true,
 
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "spacing": 4,
+    "height": 33,
+    "spacing": 15,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+    "modules-right": ["hyprland/window", "pulseaudio", "network", "cpu", "memory", "tray"],
+
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -16,5 +16,33 @@
     },
     "clock": {
         "format": "{:%H:%M - %d/%m/%Y}"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 15,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+        "format-muted": "󰅶 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
     }
 }
