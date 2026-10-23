@@ -115,6 +115,8 @@ source $ZSH/oh-my-zsh.sh
 alias ls="exa -l"
 alias nanohyprland="nano ~/.config/hypr/hyprland.conf"
 alias zshf5="source ~/.zshrc"
+alias zshrc="nano ~/.zshrc"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
