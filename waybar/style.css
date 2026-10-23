@@ -1,0 +1,15 @@
+* {
+  font-family: "Agave Nerd Font", "FontAwesome";
+  font-size: 14px;
+  background-color: #9D8AA8;
+  opacity: 1;
+  color: #F6F0FF;
+  padding: 0.5px;
+}
+
+#clock {
+  font-family: "Agave Nerd Font", "FontAwesome";
+  font-size: 16px;
+  background-color: #9D8AA8;
+  color: #F6F0FF;
+}
