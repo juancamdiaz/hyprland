@@ -1,0 +1,12 @@
+# colores
+set titlecolor bold,white,mauve
+set statuscolor white,mauve
+set errorcolor bold,lightwhite,red
+set selectedcolor lightwhite,slate
+set stripecolor ,yellow
+set scrollercolor mauve
+set numbercolor mauve
+set keycolor mauve
+set functioncolor lightblack
+set minicolor bold,white,mauve
+set promptcolor bold,white,mauve
