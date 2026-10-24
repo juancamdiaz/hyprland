@@ -1,15 +1,48 @@
-* {
-  font-family: "Agave Nerd Font", "FontAwesome";
-  font-size: 14px;
-  background-color: #9D8AA8;
-  opacity: 1;
-  color: #F6F0FF;
-  padding: 0.5px;
-}
+{
 
-#clock {
-  font-family: "Agave Nerd Font", "FontAwesome";
-  font-size: 16px;
-  background-color: #9D8AA8;
-  color: #F6F0FF;
+    "reload_style_on_change": true,
+
+    "layer": "top",
+    "position": "top",
+    "height": 33,
+    "spacing": 15,
+    "modules-left": ["hyprland/workspaces","hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    "clock": {
+        "format": "{:%H:%M - %d/%m/%Y}"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 15,
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": "󰅶 {icon} {format_source}",
+        "format-muted": "󰅶 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    }
 }
