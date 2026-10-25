@@ -5,10 +5,9 @@
     "position": "top",
     "height": 33,
     "spacing": 15,
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces","hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["hyprland/window", "pulseaudio", "network", "cpu", "memory", "tray"],
-
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
