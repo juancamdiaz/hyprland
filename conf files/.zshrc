@@ -116,6 +116,9 @@ alias ls="exa -l"
 alias nanohyprland="nano ~/.config/hypr/hyprland.conf"
 alias zshf5="source ~/.zshrc"
 alias zshrc="nano ~/.zshrc"
+alias wallpaper1="awww img /home/juan/Imágenes/Wallpapers/1.png"
+alias wallpaper2="awww img /home/juan/Imágenes/Wallpapers/2.png"
+alias wallpaper3="awww img /home/juan/Imágenes/Wallpapers/3.jpg"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
