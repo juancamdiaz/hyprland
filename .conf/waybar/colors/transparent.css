@@ -1,0 +1,116 @@
+/* comentario */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", "Agave Nerd Font", "FontAwesome";
+  font-size: 14px;
+  padding: 0.8px;
+  font-weight: bold;
+  color: #553555;
+}
+
+window#waybar {
+  background: linear-gradient(0deg, alpha(#704D70, 0) 10%, alpha(#553555, 0.8) 100%);
+  color: #F6F0FF;
+}
+
+#clock {
+  font-family: "Agave Nerd Font", "FontAwesome";
+  font-size: 16px;
+  background-color: #D3C4DC;
+  padding: 0 25px 0 25px;
+  border-radius: 7px;
+}
+
+#window,
+#pulseaudio,
+#custom-notification,
+#tray {
+  border-radius: 7px;
+  padding: 0 10px 0 10px;
+  background-color: #D3C4DC;
+}
+
+/* Lado izquierdo redondeado */
+#network {
+  background-color: #D3C4DC;
+  color: #553555;
+  border-radius: 7px 0 0 7px; 
+  padding: 0 4px 0 12px;
+  margin: 0;
+}
+
+/* Centro completamente cuadrado */
+#cpu {
+  background-color: #D3C4DC;
+  color: #553555;
+  border-radius: 0; 
+  margin: 0;
+}
+
+/* Lado derecho redondeado */
+#memory {
+  background-color: #D3C4DC;
+  color: #553555;
+  border-radius: 0 7px 7px 0; 
+  padding: 0 10px 0 0;
+  margin: 0;
+}
+
+#custom-notification {
+  margin: 0 5px 0 5px;
+}
+
+#workspaces {
+  background-color: #D3C4DC;
+  border-radius: 7px;
+  margin: 0 5px 0 5px;
+  opacity: 1;
+}
+
+#window {
+  opacity: 1;
+}
+
+#workspaces button.active {
+  background-color: #8a68a0;
+  ;
+  color: #F6F0FF;
+  border-radius: 5px;
+}
+
+
+/* 1. Definimos la animación de colores */
+@keyframes colorPulse {
+  0% {
+    color: #F6F0FF;
+  }
+
+  50% {
+    color: #704D70;
+    /* Tu tono magenta principal */
+  }
+
+  100% {
+    color: #F6F0FF;
+  }
+}
+
+/* 2. Aplicamos la animación solo cuando está sonando la música */
+#mpris.playing {
+  animation-name: colorPulse;
+  animation-duration: 1s;
+  /* Tiempo que tarda el ciclo. Bájalo a 1s para que sea más rápido */
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* 3. Color sólido para cuando la música está pausada o detenida */
+#mpris.paused,
+#mpris.stopped {
+  color: #553555;
+}
+
+#custom-bar {
+  color: #F6F0FF;
+  margin: 0 1px 0 1px;
+}

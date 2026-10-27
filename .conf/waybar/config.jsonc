@@ -1,153 +1,194 @@
-{
-    "reload_style_on_change": true,
+[
+  // --- BARRA PRINCIPAL (DP-1) ---
+  {
+    "output": ["DP-1"],
     "layer": "top",
     "position": "top",
     "height": 35,
-    "spacing": 0,
+    "reload_style_on_change": true,
+
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+      "hyprland/workspaces",
+      "hyprland/window"
     ],
     "modules-center": [
-        "clock"
+      "clock"
     ],
     "modules-right": [
-        "pulseaudio",
-        "custom/bar",
-        "network",
-        "custom/bar",
-        "cpu",
-        "memory",
-        "custom/bar",
-        "tray",
-        "custom/bar",
-        "custom/notification"
+      "mpris",
+      "custom/bar",
+      "pulseaudio",
+      "custom/bar",
+      "network",
+      "cpu",
+      "memory",
+      "custom/bar",
+      "tray",
+      "custom/bar",
+      "custom/notification"
     ],
+
+    // Módulos Barra Principal
     "hyprland/workspaces": {
-        "format": "{name}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "active": "",
-            "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5, // 5 workspaces by default on every monitor
-        }
+      "format": " {name} ",
+      "persistent-workspaces": {
+        "DP-1": [1, 2, 3]
+      }
     },
     "clock": {
-        "format": "{:%H:%M   %d/%m/%Y}",
-        "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
-        "tooltip-format": "n<span size='9pt' font='WenQuanYi Zen Hei Mono'>{calendar}</span>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
+      "format": "{:%H:%M   %d/%m/%Y}",
+      "format-alt": "{:%A, %B %d, %Y (%R)} 󰃰 ",
+      "tooltip-format": "<span size='9pt' font='WenQuanYi Zen Hei Mono'>{calendar}</span>",
+      "calendar": {
+        "mode": "year",
+        "mode-mon-col": 3,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
         }
+      },
+      "actions": {
+        "on-click-right": "mode",
+        "on-click-forward": "tz_up",
+        "on-click-backward": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+      }
     },
     "tray": {
-        "icon-size": 18,
-        "spacing": 10,
-        "icons": {
-            "blueman": "bluetooth",
-            "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png",
-            "spotify": false
-        },
-        "orders": {
-            "blueman": 99,
-            "ferdium": 98
-        },
-        "tooltip": false
+      "icon-size": 18,
+      "spacing": 10,
+      "tooltip": false
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}%  {format_source}",
-        "format-bluetooth-muted": "󰅶  {format_source}",
-        "format-muted": "󰅶 {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "󰂑",
-            "headset": "󰂑",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
+      "format": "{volume}% {icon} {format_source}",
+      "format-bluetooth": "{volume}%  {format_source}",
+      "format-bluetooth-muted": "󰅶  {format_source}",
+      "format-muted": "󰅶 {format_source}",
+      "format-source": "{volume}% ",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "󰂑",
+        "headset": "󰂑",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
     },
     "network": {
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "󰌘 ",
-        "format-disconnected": " ", //An empty format will hide the module.
-        "tooltip-format": "{ifname}",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname}  ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 60
+      "format": "{ifname}",
+      "format-wifi": "{essid} ({signalStrength}%) ",
+      "format-ethernet": "󰌘 ",
+      "format-disconnected": " ",
+      "tooltip-format": "{ifname}",
+      "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+      "tooltip-format-ethernet": "{ifname}  ",
+      "tooltip-format-disconnected": "Disconnected",
+      "max-length": 60
     },
     "cpu": {
-	"interval": 10,
-	"format": "{usage:>2}%   ",
-    "max-length": 10
-},
-
-"memory": {
-	"interval": 30,
-	"format": "{}%  ",
-	"max-length": 10
-},
-
-"custom/bar": {
-    "format": "|",
-    "tooltip": false,
-    "max-length": 10
-},
-
- "custom/notification": {
-    "tooltip": true,
-    "format": "{0} {icon}",
-    "format-icons": {
-      "notification": "󱅫 ",
-      "none": "󰂜 ",
-      "dnd-notification": "󰂠",
-      "dnd-none": "󰪓",
-      "inhibited-notification": "󰂛",
-      "inhibited-none": "󰪑",
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "interval": 10,
+      "format": "{usage:>2}%   ",
+      "max-length": 10,
+      "on-click": "kitty btop"
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "memory": {
+      "interval": 30,
+      "format": "{}%  ",
+      "max-length": 10,
+      "on-click": "kitty btop"
+    },
+    "custom/bar": {
+      "format": "|",
+      "tooltip": false,
+      "max-length": 10
+    },
+    "custom/notification": {
+      "tooltip": true,
+      "format": "{0} {icon}",
+      "format-icons": {
+        "notification": "󱅫 ",
+        "none": "󰂜 ",
+        "dnd-notification": "󰂠",
+        "dnd-none": "󰪓",
+        "inhibited-notification": "󰂛",
+        "inhibited-none": "󰪑",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-inhibited-none": "󰪑"
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+    "mpris": {
+      "format": "{title}  ",
+      "format-paused": "{artist} - {title}  ",
+      "tooltip": false,
+      "player": "playerctld",
+      "title-len": 25
+    }
+  },
+
+  // --- BARRA SECUNDARIA VERTICAL (HDMI-A-1) ---
+  {
+    "output": ["HDMI-A-1"],
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "reload_style_on_change": true,
+
+    // Módulos reducidos para no saturar la pantalla vertical
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-center": [
+      "clock"
+    ],
+    "modules-right": [
+      "mpris",
+      "custom/bar",
+      "pulseaudio"
+    ],
+
+    // Módulos Barra Secundaria
+    "hyprland/workspaces": {
+      "format": " {name} ",
+      "persistent-workspaces": {
+        "HDMI-A-1": [4, 5, 6]
+      }
+    },
+    "clock": {
+      "format": "{:%H:%M   %d/%m/%Y}"
+    },
+    "pulseaudio": {
+      "format": "{volume}% {icon}",
+      "format-muted": "󰅶",
+      "format-icons": {
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/bar": {
+      "format": "|",
+      "tooltip": false
+    },
+    "mpris": {
+      "format": "{title}  ",
+      "format-paused": "{artist} - {title}  ",
+      "player": "playerctld",
+      "title-len": 20
+    }
   }
-}
+]
