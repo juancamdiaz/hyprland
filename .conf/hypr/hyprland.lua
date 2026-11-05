@@ -27,29 +27,6 @@ hl.env("HYPRCURSOR_SIZE", "26")
 hl.env("XCURSOR_THEME", "catppuccin-frappe-dark-cursors")
 hl.env("HYPRCURSOR_THEME", "catppuccin-frappe-dark-cursors")
 
-------------------
----- MONITORES ---
-------------------
--- Monitor Principal (DP-1 144Hz)
-hl.monitor({
-    output = M1,
-    mode = "2560x1440@143.97",
-    supports_hdr = -1,
-    cm = "srgb",
-    position = "0x0",
-    scale = 1,
-    bitdepth = 8
-})
-
--- Monitor Secundario Vertical (HDMI-A-1 100Hz)
-hl.monitor({
-    output = M2,
-    mode = "1920x1080@74.97",
-    position = "2560x0",
-    scale = 1,
-    transform = 3
-})
-
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -82,36 +59,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,pkcs11,ssh")
 end)
 
--------------------
----- WORKSPACES ---
--------------------
-hl.workspace_rule({
-    workspace = "1",
-    monitor = M1,
-    default = true
-})
-hl.workspace_rule({
-    workspace = "2",
-    monitor = M1
-})
-hl.workspace_rule({
-    workspace = "3",
-    monitor = M1
-})
-
-hl.workspace_rule({
-    workspace = "4",
-    monitor = M2,
-    default = true
-})
-hl.workspace_rule({
-    workspace = "5",
-    monitor = M2
-})
-hl.workspace_rule({
-    workspace = "6",
-    monitor = M2
-})
 
 -----------------------
 ---- LOOK AND FEEL ----
