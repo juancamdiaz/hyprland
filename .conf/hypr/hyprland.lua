@@ -33,10 +33,7 @@ hl.env("HYPRCURSOR_THEME", "catppuccin-frappe-dark-cursors")
 hl.on("hyprland.start", function()
 
     -- 1. Registrar entorno en DBus/Systemd (Fundaciones para VS Code / Electron)
-    hl.exec_cmd("hyprctl setcursor frappe 24")
-
-    hl.exec_cmd("ollama serve")
-
+    
     hl.exec_cmd(
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP HYPRLAND_INSTANCE_SIGNATURE")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPsLAY XDG_CURRENT_DESKTOP")
@@ -45,18 +42,28 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user enable --now hyprmoncfgd")
 
     hl.exec_cmd("xrandr --output DP-1 --primary")
-    hl.exec_cmd("waybar")
-    hl.exec_cmd("hyprlock")
     hl.exec_cmd("sleep 1 && hyprctl dispatch workspace 1")
-    hl.exec_cmd("awww-daemon & disown")
+
+    hl.exec_cmd("hyprctl setcursor frappe 24")
     hl.exec_cmd("swaync")
     hl.exec_cmd("blueman-applet")
+
+
+    hl.exec_cmd("awww-daemon & disown")
+    hl.exec_cmd("waypaper --restore")
+
+
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("hyprlock")
+
+    
     hl.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.80")
     hl.exec_cmd("sleep 3 && tutanota-desktop & disown")
-    hl.exec_cmd("waypaper --restore")
+
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("quickshell")
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets,pkcs11,ssh")
+    hl.exec_cmd("ollama serve")
 end)
 
 
